@@ -1,0 +1,20 @@
+{
+  "short_name": "bharath-automobiles-e-vehicles",
+  "name": "bharath-automobiles-e-vehicles",
+  "icons": [
+    {
+      "src": "Piano B Letter Logo.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "Piano B Letter Logo.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core Colors - Indian Flag Theme */
+    --color-background: #FFFFFF; /* white */
+    --color-foreground: #1A1A1A; /* high contrast dark */
+    --color-border: #E5E7EB; /* gray-200 */
+    --color-input: #FFFFFF; /* white */
+    --color-ring: #FF9933; /* saffron/orange */
+    
+    /* Card Colors */
+    --color-card: #FFFFFF; /* white */
+    --color-card-foreground: #1A1A1A; /* high contrast dark */
+    --color-popover: #FFFFFF; /* white */
+    --color-popover-foreground: #1A1A1A; /* high contrast dark */
+    
+    /* Muted Colors */
+    --color-muted: #F8F9FA; /* light gray */
+    --color-muted-foreground: #495057; /* medium gray */
+    
+    /* Brand Colors - Indian Flag Gradient */
+    --color-primary: #FF9933; /* saffron */
+    --color-primary-foreground: #FFFFFF; /* white */
+    --color-secondary: #138808; /* green */
+    --color-secondary-foreground: #FFFFFF; /* white */
+    
+    /* State Colors */
+    --color-destructive: #DC2626; /* red-600 */
+    --color-destructive-foreground: #FFFFFF; /* white */
+    --color-accent: #000080; /* navy blue (chakra) */
+    --color-accent-foreground: #FFFFFF; /* white */
+    --color-success: #138808; /* indian flag green */
+    --color-success-foreground: #FFFFFF; /* white */
+    --color-warning: #FF9933; /* saffron */
+    --color-warning-foreground: #FFFFFF; /* white */
+    --color-error: #DC2626; /* red-600 */
+    --color-error-foreground: #FFFFFF; /* white */
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    /* Royal Blue, White, and Black gradient background */
+    background: linear-gradient(135deg, #4169E1 0%, #FFFFFF 50%, #000000 100%);
+    background-attachment: fixed;
+    @apply text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Hero Background Image */
+  .hero-bg-image {
+    background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1920&h=1080&fit=crop&crop=center');
+  }
+
+  /* Indian Flag Gradient Classes */
+  .indian-flag-gradient {
+    background: linear-gradient(180deg, #FF9933 0%, #FFFFFF 33.33%, #138808 66.66%, #000080 100%);
+  }
+
+  .indian-flag-horizontal {
+    background: linear-gradient(90deg, #FF9933 0%, #FFFFFF 50%, #138808 100%);
+  }
+
+  /* Royal Blue, White, Black gradient utility class */
+  .royal-gradient {
+    background: linear-gradient(135deg, #4169E1 0%, #FFFFFF 50%, #000000 100%);
+  }
+
+  /* Animation preferences */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer utilities {
+  /* Custom animations */
+  .animate-fade-up {
+    animation: fadeUp 0.3s ease-out;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Hover transforms */
+  .hover-lift {
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  }
+
+  .hover-lift:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.10);
+  }
+
+  /* Parallax utility */
+  .parallax-slow {
+    transform: translateY(calc(var(--scroll-y, 0) * 0.5));
+  }
+}
+
+/* Indian Tricolor theme customizations */
+.tricolor-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.tricolor-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(45deg, 
+    transparent, 
+    rgba(255, 153, 51, 0.05), 
+    transparent, 
+    rgba(19, 136, 8, 0.05), 
+    transparent
+  );
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
